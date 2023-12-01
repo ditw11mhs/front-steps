@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family:
     system-ui,
@@ -11,49 +16,119 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
-}
 
-h1 {
-  border: 2px solid thick;
-}
+  --clr-primary: #1158e8;
+  --clr-secondary: #d5e9e8;
+  --clr-slate: #bac7ff;
+  --clr-light: white;
+  --clr-dark: black;
 
-header {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-p {
-  border: 2px solid black;
-  padding: 10px;
+  --clr-negative: #c42600;
+  --clr-positive: #008154;
+  --clr-warning: orange;
 }
 
 body {
-  padding-block: 10rem;
-  padding-inline: 30rem;
+  overflow-x: hidden;
 }
 
-#todo-form {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding: 1%;
+  row-gap: 0.2em;
+  align-content: space-evenly;
 }
 
-input {
-  font-weight: 100;
-  font-size: inherit;
-  padding: 1rem;
-  border: none;
-  position: relative;
-  left: 0cm;
-  box-sizing: border-box;
-  background-color: lightgrey;
-  color: darkgrey;
+h1 {
+  color: var(--clr-primary);
 }
 
-input:focus {
-  background-color: white;
-  color: black;
+.task-input {
+  font-size: 1.25rem;
+  background-color: var(--clr-secondary);
+  padding: 0.25em;
+
+  border: 0.1em solid var(--clr-slate);
+  border-radius: 0.5em;
+
+  transition: all 0.2s;
 }
 
-#todo-list {
-  padding: 1rem;
+.task-input:hover,
+.task-input:focus,
+.task-input:not(:placeholder-shown) {
+  background-color: var(--clr-light);
+  border-color: var(--clr-primary);
+}
+
+.task-list-container {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+  align-content: space-evenly;
+}
+
+.task-item-block {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.3em;
+}
+
+.task-item {
+  flex-grow: 1;
+  font-size: 1.25rem;
+}
+
+.task-item-inactive {
+  flex-grow: 1;
+  font-size: 1.25rem;
+  text-decoration: line-through;
+  color: var(--clr-slate);
+}
+
+.btn {
+  border-width: 0.1em;
+  border-style: solid;
+  padding: 0.1em;
+  font-size: 1.25rem;
+  transition: all 0.2s;
+  border-radius: 0.5em;
+}
+
+.btn-done {
+  border-color: var(--clr-positive);
+  background-color: var(--clr-light);
+  color: var(--clr-positive);
+}
+
+.btn-done:hover {
+  background-color: var(--clr-positive);
+  color: var(--clr-light);
+}
+
+.btn-done-inactive {
+  border-color: var(--clr-warning);
+  background-color: var(--clr-light);
+  color: var(--clr-warning);
+}
+
+.btn-done-inactive:hover {
+  background-color: var(--clr-warning);
+  color: var(--clr-light);
+}
+
+.btn-delete {
+  border-color: var(--clr-negative);
+  background-color: var(--clr-light);
+  color: var(--clr-negative);
+}
+
+.btn-delete:hover {
+  background-color: var(--clr-negative);
+  color: var(--clr-light);
 }
